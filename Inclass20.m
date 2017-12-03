@@ -1,4 +1,19 @@
 %Inclass 20
+%GB comments
+1 100
+2 100
+3 70 Your code does not produce the optimal fit. I changed a few things in your code to help fix it. 
+fit_str3 = 'V*x^n/(K^n+x^n)';
+fitmodel6 = fittype(fit_str3);
+% fitmodel6 = fittype(fit_str3, 'problem',{'V','K'}) YOUR LINE
+coeffnames(fitmodel6)
+[fit_out6, fit_metric6] = fit(xx',yy',fitmodel6,'Lower',[0 0 0]);
+%[fit_out6, fit_metric6] = fit(xx',yy',fitmodel6, 'problem', {10, 10},'Lower',[0 0 0]); YOUR LINE
+plot(fit_out6, xx',yy')
+
+4. 100
+Overall 93
+
 
 %In this folder you will find a .mat file with x and y data
 
